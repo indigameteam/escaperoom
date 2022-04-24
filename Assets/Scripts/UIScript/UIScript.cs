@@ -25,8 +25,10 @@ public class UIScript : MonoBehaviour
 
         ScriptInfo curText = _textInfoList[0];
         _script.text = curText.Script;
-        _leftCharacter.sprite = Instantiate((Sprite)_resMgr.GetResource(curText.LeftCharacterIconID));
-        _rightCharacter.sprite = Instantiate((Sprite)_resMgr.GetResource(curText.RightCharacterIconID));
+        Sprite temp = _resMgr.GetResource(curText.LeftCharacterIconID) as Sprite;
+        _leftCharacter.sprite = temp;
+        temp = _resMgr.GetResource(curText.RightCharacterIconID) as Sprite;
+        _rightCharacter.sprite = temp;
     }
 
     void Update()
